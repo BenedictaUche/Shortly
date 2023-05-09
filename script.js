@@ -1,26 +1,79 @@
-input = document.getElementById('input').value
+
+
+// const apiKey = 'ec5c7a9a4101470996efc00af3e1674a';
+// const longUrl = 'https://example.com';
+
+
+
+// fetch(`https://api.rebrandly.com/v1/links`, {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'apikey': apiKey
+//     },
+//     body: JSON.stringify({
+//         destination: longUrl
+//     })
+// })
+//     .then(response => response.json())
+//     .then(data => console.log(data.shortUrl))
+//     .catch(error => console.error(error));
 
 const apiKey = 'ec5c7a9a4101470996efc00af3e1674a';
-const longUrl = `${input}`;
+
+const selectElement = (selector) => {
+    const element = document.querySelector(selector);
+    if (element) return element;
+    throw new Error(`Cannot find the element ${selector}`);
+};
+
+const form = selectElement('form');
+const input = selectElement('input');
 
 
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const url = input.value;
+    shortenUrl(url);
+});
 
-fetch(`https://api.rebrandly.com/v1/links`, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'apikey': apiKey
-    },
-    body: JSON.stringify({
-        destination: longUrl
-    })
-})
-    .then(response => response.json())
-    .then(data => console.log(data.shortUrl))
-    .catch(error => console.error(error));
+async function shortenUrl(url) {
+    try {
+        const res = await fetch(`https://api.rebrandly.com/v1/links`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'apikey': apiKey
+            },
+            body: JSON.stringify({
+                destination: url
+            })
+        });
+        const data = await res.json();
 
-// const selectElement = (selector) => {
-//     const element = document.querySelector(selector);
-//     if(element) return element;
-//     throw new Error(`Cannot find the element ${selector}`)
-// }
+        const shortenedUrlContainer = document.createElement('div');
+        shortenedUrlContainer.classList.add('d-flex', 'd-column', 'item');
+        shortenedUrlContainer.innerHTML = `
+      <div class="d-flex justify-content-between container container-fluid mt-3 py-2 output">
+        <div>
+          <p>${url}</p>
+        </div>
+        <div class="shortened">
+          <a href="${data.shortUrl}">${data.shortUrl}</a>
+          <button class="btn copy">copy</button>
+        </div>
+      </div>
+    `;
+        const copyBtn = shortenedUrlContainer.querySelector('.copy');
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(copyBtn.previousElementSibling.textContent);
+        });
+        const output = selectElement('.outputList');
+        output.appendChild(shortenedUrlContainer);
+        input.value = '';
+    } catch (error) {
+        console.log(error);
+        // display error message to the user
+
+    }
+}
