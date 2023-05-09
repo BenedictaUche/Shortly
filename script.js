@@ -60,7 +60,7 @@ async function shortenUrl(url) {
         </div>
         <div class="shortened">
           <a href="${data.shortUrl}">${data.shortUrl}</a>
-          <button class="btn copy">copy</button>
+          <button class="btn copy">Copy</button>
         </div>
       </div>
     `;
