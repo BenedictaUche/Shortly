@@ -1,0 +1,291 @@
+:root {
+    /* ### Primary -  */
+    --Cyan: hsl(180, 66%, 49%);
+    --DarkViolet: hsl(257, 27%, 26%);
+    /* ### Secondary -  */
+    --Red: hsl(0, 87%, 67%);
+    /* ### Neutral  */
+    --Gray: hsl(0, 0%, 75%);
+    --GrayishViolet: hsl(257, 7%, 63%);
+    --VeryDarkBlue: hsl(255, 11%, 22%);
+    --VeryDarkViolet: hsl(260, 8%, 14%);
+    /* ### Font  */
+    --FontSize: 18px;
+    --Family: 'Poppins', sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--Family);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.authbtn ul li button {
+    border: none;
+    background-color: transparent;
+}
+
+/* Hero section */
+
+.hero {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.hero-text {
+    margin-left: 10%;
+}
+
+.hero-text h1 {
+    font-family: var(--Family);
+    font-weight: 700;
+    font-size: 70px;
+}
+
+.hero-text p {
+    font-family: var(--Family);
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--GrayishViolet);
+}
+
+.hero-text button {
+    background-color: var(--Cyan);
+    color: #fff;
+    font-family: var(--Family);
+    font-size: 20px;
+    font-weight: 500;
+    padding: 1%;
+}
+
+.hero-text button:hover {
+    opacity: 0.7;
+    transition: all 200ms ease-in-out;
+    color: #fff;
+    font-family: var(--Family);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.hero-img img {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/* middle section */
+.middlesect {
+    background-color: #eff1f7;
+}
+
+.purple {
+    background: url('./images/bg-boost-desktop.svg');
+    background-color: var(--DarkViolet);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    position: relative;
+    top: -40px;
+}
+
+.purple form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.purple form input {
+    width: 50vw;
+    height: 40px;
+}
+
+.purple form input:focus {
+    outline-color: #fff;
+}
+
+.purple form button {
+    background-color: var(--Cyan);
+    color: #fff;
+    font-family: var(--Family);
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.purple form button:hover {
+    opacity: 0.7;
+    transition: all 200ms ease-in-out;
+    color: #fff;
+    font-family: var(--Family);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.output {
+    background-color: #fff;
+    border-radius: 8px;
+    align-items: center;
+    justify-items: center;
+}
+
+.output button {
+    background-color: var(--Cyan);
+    color: #fff;
+    font-family: var(--Family);
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+/* Advanced section */
+
+.advanced {
+    margin-top: 10%;
+
+}
+
+
+
+.advancedtext {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 7%;
+}
+
+.advancedtext h2 {
+    font-family: var(--Family);
+    font-weight: 600;
+    font-size: 35px;
+    text-align: center;
+}
+
+.advancedtext p {
+    font-family: var(--Family);
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    width: 32vw;
+    color: var(--GrayishViolet);
+}
+
+.cards {
+    margin-bottom: 10%;
+}
+
+.card {
+    padding: 8% 8% 4% 8%;
+    max-height: 100%;
+}
+
+.card .icon {
+    background-color: var(--DarkViolet);
+    width: 70px;
+    text-align: center;
+    padding-left: 0;
+    border-radius: 100%;
+    position: absolute;
+    top: -27px;
+}
+
+.card h3 {
+    font-family: var(--Family);
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 10%;
+}
+
+.card p {
+    font-family: var(--Family);
+    font-weight: normal;
+    font-size: 12px;
+    color: var(--GrayishViolet);
+}
+
+.card-2 {
+    margin-top: 12%;
+}
+
+.card-3 {
+    margin-top: 24%;
+}
+
+.cont .line {
+    height: 10px;
+    width: 50px;
+    background-color: var(--Cyan);
+}
+
+/* Midfooter section */
+
+.midbackground {
+    background: url('./images/bg-boost-desktop.svg');
+    background-color: var(--DarkViolet);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.midbackground div {
+    text-align: center;
+    color: #fff;
+}
+
+.midbackground div h2 {
+    font-family: var(--Family);
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.midbackground div button {
+    background-color: var(--Cyan);
+    color: #fff;
+    font-family: var(--Family);
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 2%;
+}
+
+.midbackground div button:hover {
+    opacity: 0.7;
+    transition: all 200ms ease-in-out;
+    color: #fff;
+}
+
+/* Footer section */
+.footsect {
+    background-color: var(--VeryDarkViolet);
+    color: #fff;
+}
+
+.footsect h3 {
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+.footsect ul li a {
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--GrayishViolet);
+}
+
+.footsect ul li a:hover {
+    color: var(--Cyan);
+}
+
+.socials ul li>a {
+    margin-right: 2%;
+}
