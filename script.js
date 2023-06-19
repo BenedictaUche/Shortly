@@ -1,4 +1,4 @@
-
+let copy = document.querySelector('.copy');
 
 const apiKey = 'ec5c7a9a4101470996efc00af3e1674a';
 
@@ -48,6 +48,7 @@ async function shortenUrl(url) {
         const copyBtn = shortenedUrlContainer.querySelector('.copy');
         copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText(copyBtn.previousElementSibling.textContent);
+            copy.innerHTML = 'Copied!'
         });
         const output = selectElement('.outputList');
         output.appendChild(shortenedUrlContainer);
